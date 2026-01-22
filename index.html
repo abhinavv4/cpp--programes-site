@@ -8,16 +8,15 @@
 </head>
 
 <style>
-    code{
+  code {
     background-color: rgb(26, 21, 21);
     color: rgb(131, 70, 222);
     padding: 10px;
     border-radius: 5px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 10px;  
+    display: block;
+    margin-bottom: 10px;
     overflow-x: auto;
+    white-space: pre;
   }
 </style>
 
@@ -37,13 +36,13 @@
 
       <pre>
        <code>
-        #include &ltiostream&gt
-        using namespace std;
-        int main() 
-        {
-         cout &lt&lt""Hello, World!" &lt&lt"endl;
-         return 0;
-        } 
+#include &lt;iostream&gt;
+using namespace std;
+int main() 
+{
+  cout &lt;&lt; "Hello, World!" &lt;&lt; endl;
+  return 0;
+} 
        </code>
       </pre>
 
@@ -53,27 +52,27 @@
 
       <pre>
         <code>
-          #include &ltiostream&gt
-          using namespace std;
-          class Base
-          {
-            public:
-            virtual void show() = 0; // pure virtual function
-          };
-          class Derived : public Base
-          {
-            public:
-            void show()
-            {
-              cout &lt&lt"Derived class show function called" &lt&ltendl; 
-            }
-          };
-          int main()
-          {
-            Derived d;
-            d.show();
-            return 0;
-          }
+#include &lt;iostream&gt;
+using namespace std;
+class Base
+{
+  public:
+  virtual void show() = 0; // pure virtual function
+};
+class Derived : public Base
+{
+  public:
+  void show()
+  {
+    cout &lt;&lt; "Derived class show function called" &lt;&lt; endl; 
+  }
+};
+int main()
+{
+  Derived d;
+  d.show();
+  return 0;
+}
         </code>
       </pre>
 
@@ -83,28 +82,28 @@
 
       <pre>
         <code>
-        #includei &ltiostream&gt
-        using namespace std;
-        // standarad approch
-        int main()
-        {
-          int num, fact=1;
-          cout << " enter any positve integer\n";
-          cin >> num;
-          if(num<=0)
-          {
-            cout << " not defined\n";
-          }
-          else
-          {
-            for (int i = 1; i <= num; i++)
-            {
-              fact = fact * i;
-            }
-          }
-          cout << " Factorial: " << fact << endl;
-          return 0;
-        }
+#include &lt;iostream&gt;
+using namespace std;
+// standard approach
+int main()
+{
+  int num, fact=1;
+  cout &lt;&lt; " enter any positive integer\n";
+  cin &gt;&gt; num;
+  if(num&lt;=0)
+  {
+    cout &lt;&lt; " not defined\n";
+  }
+  else
+  {
+    for (int i = 1; i &lt;= num; i++)
+    {
+      fact = fact * i;
+    }
+  }
+  cout &lt;&lt; " Factorial: " &lt;&lt; fact &lt;&lt; endl;
+  return 0;
+}
         </code>
       </pre>
 
@@ -114,52 +113,52 @@
 
       <pre>
         <code>
-          #include &ltiostream&gt
-          using namespace std;
-          int factorial(int n)
-          {
-            if (n <= 1)
-              return 1;
-            else
-              return n * factorial(n - 1);
-          }
-          int main()
-          {
-            int num;
-            cout &lt&lt"Enter a positive integer: ";
-            cin &gt&gt num;
-            cout &lt&lt"Factorial of " &lt&ltnum &lt&lt" = " &lt&ltfactorial(num) &lt&ltendl;
-            return 0;
-          }
+#include &lt;iostream&gt;
+using namespace std;
+int factorial(int n)
+{
+  if (n &lt;= 1)
+    return 1;
+  else
+    return n * factorial(n - 1);
+}
+int main()
+{
+  int num;
+  cout &lt;&lt; "Enter a positive integer: ";
+  cin &gt;&gt; num;
+  cout &lt;&lt; "Factorial of " &lt;&lt; num &lt;&lt; " = " &lt;&lt; factorial(num) &lt;&lt; endl;
+  return 0;
+}
         </code>
       </pre>
 
       <span>
-        <h3>Fibonachi Series: </h3>
+        <h3>Fibonacci Series: </h3>
       </span>
 
       <pre>
         <code>
-          #include &ltiostream&gt
-          using namespace std;
-          int main()
-          {
-            int n;
-            cout << "enter the position of fibonachi series";
-            cin >> n;
-            int t1 = 0, t2 = 1, nxtterm = 0;
-            cout << "Fibonachi series:";
-            for (int i = 0; i <= n; ++i)
-            {
-              cout<< t1<<",";
-              //swapping logic
-              nxtterm = t1 + t2;
-              t1 = t2;
-              t2 = nxtterm;
-            }
-            cout << endl;
-            return 0;
-          }  
+#include &lt;iostream&gt;
+using namespace std;
+int main()
+{
+  int n;
+  cout &lt;&lt; "enter the position of fibonacci series";
+  cin &gt;&gt; n;
+  int t1 = 0, t2 = 1, nxtterm = 0;
+  cout &lt;&lt; "Fibonacci series:";
+  for (int i = 0; i &lt;= n; ++i)
+  {
+    cout &lt;&lt; t1 &lt;&lt; ",";
+    //swapping logic
+    nxtterm = t1 + t2;
+    t1 = t2;
+    t2 = nxtterm;
+  }
+  cout &lt;&lt; endl;
+  return 0;
+}  
         </code>
       </pre>
 
@@ -169,74 +168,74 @@
 
       <pre>
         <code>
-          #include &lt"iostream&gt
-          using namespace std;
-          class base
-          {
-            public:
-            void print()
-            {
-              cout&lt&lt"lt;"hello/n";
-            }
-          };
-          class derived : public base
-          {
-            public:
-            void show()
-            {
-              cout&lt&lt"lt;"welcome/n";
-            }
-          };
-          int main()
-          {
-            derived obj;
-            obj.print();
-            obj.show();
-            return 0;
-          }
+#include &lt;iostream&gt;
+using namespace std;
+class base
+{
+  public:
+  void print()
+  {
+    cout &lt;&lt; "hello\n";
+  }
+};
+class derived : public base
+{
+  public:
+  void show()
+  {
+    cout &lt;&lt; "welcome\n";
+  }
+};
+int main()
+{
+  derived obj;
+  obj.print();
+  obj.show();
+  return 0;
+}
         </code>
       </pre>
 
       <span>
-        <h3>multiple inchritence:</h3>
+        <h3>multiple inheritance:</h3>
       </span>
 
       <pre>
         <code>
-          #include &ltiostream&gt
-          using namespace std;
-          class A
-          {
-            public:
-            void displayA()
-            {
-              cout &lt&lt"Class A method called" &lt&ltendl;
-            }
-          };
-          class B
-          {
-            public:
-            void displayB()
-            {
-              cout &lt&lt"Class B method called" &lt&ltendl;
-            }
-          };
-          class C : public A, public B
-          { 
-            public:
-            void displayC()
-            {
-              cout &lt&lt"Class C method called" &lt&ltendl;
-            }
-          };
-          int main()
-          {
-            C obj;
-            obj.displayA();
-            obj.displayB();
-            obj.displayC();
-            return 0;
-          } 
+#include &lt;iostream&gt;
+using namespace std;
+class A
+{
+  public:
+  void displayA()
+  {
+    cout &lt;&lt; "Class A method called" &lt;&lt; endl;
+  }
+};
+class B
+{
+  public:
+  void displayB()
+  {
+    cout &lt;&lt; "Class B method called" &lt;&lt; endl;
+  }
+};
+class C : public A, public B
+{ 
+  public:
+  void displayC()
+  {
+    cout &lt;&lt; "Class C method called" &lt;&lt; endl;
+  }
+};
+int main()
+{
+  C obj;
+  obj.displayA();
+  obj.displayB();
+  obj.displayC();
+  return 0;
+} 
         </code>
       </pre>
 
@@ -246,67 +245,67 @@
 
       <pre>
         <code>
-          #include &lt&ltiostream&gt
-          using namespace std;
-          class A
-          {
-            public:
-            void displayA()
-            {
-              cout &lt&lt"Class A method called" &lt&ltendl;  
-            }
-          };
-          class B : public A
-          {
-            public:
-            void displayB()
-            {
-              cout &lt&lt"Class B method called" &lt&ltendl;
-            } 
-          };
-          class C : public B
-          {
-            public:
-            void displayC()
-            {
-              cout &lt&lt"Class C method called" &lt&ltendl;
-            }
-          };     
+#include &lt;iostream&gt;
+using namespace std;
+class A
+{
+  public:
+  void displayA()
+  {
+    cout &lt;&lt; "Class A method called" &lt;&lt; endl;  
+  }
+};
+class B : public A
+{
+  public:
+  void displayB()
+  {
+    cout &lt;&lt; "Class B method called" &lt;&lt; endl;
+  } 
+};
+class C : public B
+{
+  public:
+  void displayC()
+  {
+    cout &lt;&lt; "Class C method called" &lt;&lt; endl;
+  }
+};     
         </code>
       </pre>
 
       <span>
-        <h3> herachical Incheritance:</h3>
+        <h3>hierarchical Inheritance:</h3>
       </span>
 
       <pre>
         <code>
-          include &ltiostream&gt
-          using namespace std;
-          class A
-          {
-            public:
-            void displayA()
-            {
-              cout &lt&lt"Class A method called" &lt&ltendl;
-            }
-          };
-          class B : public A
-          {
-            public:
-            void displayB()
-            {
-              cout &lt&lt"Class B method called" &lt&ltendl;
-            }
-          };  
-          class C : public A
-          {
-            public:
-            void displayC()
-            {
-              cout &lt&lt"Class C method called" &lt&ltendl;
-            }
-          };
+#include &lt;iostream&gt;
+using namespace std;
+class A
+{
+  public:
+  void displayA()
+  {
+    cout &lt;&lt; "Class A method called" &lt;&lt; endl;
+  }
+};
+class B : public A
+{
+  public:
+  void displayB()
+  {
+    cout &lt;&lt; "Class B method called" &lt;&lt; endl;
+  }
+};  
+class C : public A
+{
+  public:
+  void displayC()
+  {
+    cout &lt;&lt; "Class C method called" &lt;&lt; endl;
+  }
+};
         </code>
       </pre>
 
@@ -316,196 +315,194 @@
 
       <pre>
         <code>
-          #include &ltiostream&gt
-          using namespace std;
-          class A
-          {
-            public:
-            void print()
-            {
-              cout &lt&lt"Class A method called" &lt&ltendl;
-            }
-          };
-          class B : public A
-          {
-            public:
-            void showB()
-            {
-              cout &lt&lt"Class B method called" &lt&ltendl;
-            }
-          };
-          class C : public A
-          {
-            public:
-            void showC()
-            {
-              cout &lt&lt"Class C method called" &lt&ltendl;
-            }
-          };
-          class D : public B, public C
-          {
-            public:
-            void showD()
-            {
-              cout &lt&lt"Class D method called" &lt&ltendl;
-            }
-          };
-          int main()
-          {
-            D obj;
-            obj.print();
-            obj.showB();
-            obj.showC();
-            obj.showD();
-            return 0;
-          }
+#include &lt;iostream&gt;
+using namespace std;
+class A
+{
+  public:
+  void print()
+  {
+    cout &lt;&lt; "Class A method called" &lt;&lt; endl;
+  }
+};
+class B : public A
+{
+  public:
+  void showB()
+  {
+    cout &lt;&lt; "Class B method called" &lt;&lt; endl;
+  }
+};
+class C : public A
+{
+  public:
+  void showC()
+  {
+    cout &lt;&lt; "Class C method called" &lt;&lt; endl;
+  }
+};
+class D : public B, public C
+{
+  public:
+  void showD()
+  {
+    cout &lt;&lt; "Class D method called" &lt;&lt; endl;
+  }
+};
+int main()
+{
+  D obj;
+  obj.print();
+  obj.showB();
+  obj.showC();
+  obj.showD();
+  return 0;
+}
         </code>
       </pre>
-      
+
       <span>
         <h3> operator overloading arithmetic:</h3>
       </span>
 
       <pre>
         <code>
-          #include &ltiostream&gt  
-          using namespace std;
-          class A 
-          {
-            int a,b;
-            public:
-            void set(int x, int y) 
-            {
-              a = x;
-              b = y;
-            }
-            void display()
-            {
-              cout &lt&lt"a: " &lt&lta &lt&lt", b: " &lt&ltb &lt&ltendl;
-            }
-            A operator+(A obj)
-            {
-              A t;
-              t.a= a+ obj.a;
-              t.b= b+ obj.b;
-              return t;
-            }
-  
-          };
-          int main()
-          {
-            A obj1, obj2, obj3;
-            obj1.set(10, 20);
-            obj2.set(30, 40);
-            obj3 = obj1 + obj2;
-            obj3.display();
-            return 0;
-          }
+#include &lt;iostream&gt;  
+using namespace std;
+class A 
+{
+  int a,b;
+  public:
+  void set(int x, int y) 
+  {
+    a = x;
+    b = y;
+  }
+  void display()
+  {
+    cout &lt;&lt; "a: " &lt;&lt; a &lt;&lt; ", b: " &lt;&lt; b &lt;&lt; endl;
+  }
+  A operator+(A obj)
+  {
+    A t;
+    t.a= a+ obj.a;
+    t.b= b+ obj.b;
+    return t;
+  }
+};
+int main()
+{
+  A obj1, obj2, obj3;
+  obj1.set(10, 20);
+  obj2.set(30, 40);
+  obj3 = obj1 + obj2;
+  obj3.display();
+  return 0;
+}
         </code>
       </pre>
 
       <span>
-        <h3>operator overloading ternary:</h3>
+        <h3>operator overloading unary:</h3>
       </span>
 
       <pre>
         <code>
-          #include &ltiostream&gt
-          using namespace std;
-          class A 
-          {
-            int a,b;
-            public:
-            void set(int x,int y)
-            {
-              a = x;
-              b = y;
-            }
-            void display
-            {
-              cout&lt&lt"a="&lt&lta&lt&lt"b="&lt&ltb;
-            }
-            A operator++()
-            {
-              A temp;
-              tmep.a=++a;
-              temp.n=++b;
-              return temp;
-            }
-            A operator++(int)
-            {
-              A temp;
-              tmep.a=a++;
-              temp.n=b++;
-              return temp;
-            }            
-          };
-          int main()
-          {
-            A obj1,obj2,obj3;
-            obj1.setdata(5,10);
-            cout&lt&lt"Original Data: ";
-            obj1.showdata();
-            
-            obj2=++obj1;
-            cout&lt&lt"After Pre-increment: ";
-            obj2.showdata();
-            
-            obj3=obj1++;
-            cout&lt&lt"After Post-increment: ";
-            obj3.showdata();
-            
-            cout&lt&lt"Final Data in obj1: ";
-            obj1.showdata();
-            return 0;
-          }
+#include &lt;iostream&gt;
+using namespace std;
+class A 
+{
+  int a,b;
+  public:
+  void set(int x, int y)
+  {
+    a = x;
+    b = y;
+  }
+  void display()
+  {
+    cout &lt;&lt; "a=" &lt;&lt; a &lt;&lt; " b=" &lt;&lt; b;
+  }
+  A operator++()
+  {
+    A temp;
+    temp.a=++a;
+    temp.b=++b;
+    return temp;
+  }
+  A operator++(int)
+  {
+    A temp;
+    temp.a=a++;
+    temp.b=b++;
+    return temp;
+  }            
+};
+int main()
+{
+  A obj1,obj2,obj3;
+  obj1.set(5,10);
+  cout &lt;&lt; "Original Data: ";
+  obj1.display();
+  
+  obj2=++obj1;
+  cout &lt;&lt; "After Pre-increment: ";
+  obj2.display();
+  
+  obj3=obj1++;
+  cout &lt;&lt; "After Post-increment: ";
+  obj3.display();
+  
+  cout &lt;&lt; "Final Data in obj1: ";
+  obj1.display();
+  return 0;
+}
         </code>
       </pre>
 
-  <span>
-    <h3>linear search in an array:</h3>
-  </span>
-              
+      <span>
+        <h3>linear search in an array:</h3>
+      </span>
+
       <pre>
         <code>
-          //linear search in an array
-          #include &ltiostream&gt
-          using namespace std;
-          int main()
-          {       
-              int n,flag=0;
-              cout<<"Enter the number of elements in the array: ";
-              cin>>n;
-          
-              int arr[n];
-              cout<<"Enter the elements of the array: ";
-              for(int i=0;i<n;i++)
-              {
-                  cin>>arr[i];
-              }
-          
-              int key;
-              cout<<"Enter the element to be searched: ";
-              cin>>key;
-              for(int i=0;i<n;i++)
-              {
-                  if(arr[i]==key)
-                  {
-                      cout<<"Element found at index "<<i<<endl;
-                      flag=1;
-                      break;
-                  }
-              }
-              
-              if(flag==0)
-              {
-                  cout<<"Element not found in the array"<<endl;
-              }
-              return 0;
-          }
+//linear search in an array
+#include &lt;iostream&gt;
+using namespace std;
+int main()
+{       
+  int n,flag=0;
+  cout &lt;&lt; "Enter the number of elements in the array: ";
+  cin &gt;&gt; n;
+
+  int arr[n];
+  cout &lt;&lt; "Enter the elements of the array: ";
+  for(int i=0;i&lt;n;i++)
+  {
+    cin &gt;&gt; arr[i];
+  }
+
+  int key;
+  cout &lt;&lt; "Enter the element to be searched: ";
+  cin &gt;&gt; key;
+  for(int i=0;i&lt;n;i++)
+  {
+    if(arr[i]==key)
+    {
+      cout &lt;&lt; "Element found at index " &lt;&lt; i &lt;&lt; endl;
+      flag=1;
+      break;
+    }
+  }
+  
+  if(flag==0)
+  {
+    cout &lt;&lt; "Element not found in the array" &lt;&lt; endl;
+  }
+  return 0;
+}
         </code>
       </pre>
-      
 
     </main>
   </div>
