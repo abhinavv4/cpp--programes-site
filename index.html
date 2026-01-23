@@ -504,6 +504,52 @@ int main()
         </code>
       </pre>
 
+      <span>
+        <h3>Bineary search in an array:</h3>
+      </span>
+
+      <pre>
+        <code>
+//binary search in an array 
+#include &lt;iostream&gt;
+using namespace std;
+int main(){
+    int n, key;
+    cout &lt;&lt; "Enter number of elements: \n";
+    cin &gt;&gt; n;
+    int arr[n];
+    cout &lt;&lt; "Enter elements in sorted order: \n";
+    for(int i = 0; i &lt; n; i++){
+        cin &gt;&gt; arr[i];
+    }
+    cout &lt;&lt; "Enter element to search: \n";
+    cin &gt;&gt; key;
+    int left = 0, right = n - 1, mid;
+    bool found = false;
+    while(left &lt;= right){
+        mid = left + (right - left) / 2;
+        if(arr[mid] == key){
+            found = true;
+            break;
+        }
+        else if(arr[mid] &lt; key){
+            left = mid + 1;
+        }
+        else{
+            right = mid - 1;
+        }
+    }
+    if(found){
+        cout &lt;&lt; "Element found at index: " &lt;&lt; mid &lt;&lt; endl;
+    }
+    else{
+        cout &lt;&lt; "Element not found" &lt;&lt; endl;
+    }
+    return 0;
+}          
+        </code>
+      </pre>
+      
     </main>
   </div>
 
