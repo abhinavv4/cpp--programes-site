@@ -549,8 +549,164 @@ int main(){
 }          
         </code>
       </pre>
+
+      <span>
+        <h3>Bubble sorting: </h3>
+      </span>
+
+      <pre>
+        <code>
+#include &lt;iostream&gt;
+using namespace std;
+int main() {
+  int n;
+  cout &lt;&lt; "Enter number of elements: ";
+  cin &gt;&gt; n;
+  int arr[n];
+  cout &lt;&lt; "Enter elements: ";
+  for(int i=0; i&lt;n; i++) {
+    cin &gt;&gt; arr[i];
+  }
+  for(int i=0; i&lt;n-1; i++) {
+    for(int j=0; j&lt;n-i-1; j++) {
+      if(arr[j] &gt; arr[j+1]) {
+        int temp = arr[j];
+        arr[j] = arr[j+1];
+        arr[j+1] = temp;
+      }
+    }
+  }
+  cout &lt;&lt; "Sorted Array: ";
+  for(int i=0; i&lt;n; i++) {
+    cout &lt;&lt; arr[i] &lt;&lt; " ";
+  }
+  cout &lt;&lt; endl;
+  return 0;
+}
+        </code>
+      </pre>
+
+      <span>
+        <h3>Quick sorting:</h3>
+      </span>
       
+      <pre>
+        <code>
+#include &lt;iostream&gt;
+using namespace std;
+int partition(int arr[], int low, int high)
+{
+  int pivot = arr[high];
+  int i = low - 1;
+  for (int j = low; j &lt; high; j++)
+  {
+    if (arr[j] &lt;= pivot)
+    {
+      i++;
+      swap(arr[i], arr[j]);
+    }
+  }
+  swap(arr[i + 1], arr[high]);
+  return i + 1;
+}
+void quickSort(int arr[], int low, int high)
+{
+  if (low &lt; high)
+  {
+    int pi = partition(arr, low, high);
+    quickSort(arr, low, pi - 1);
+    quickSort(arr, pi + 1, high);
+  }
+}
+int main()
+{
+  int n;
+  cout &lt;&lt; "Enter number of elements: ";
+  cin &gt;&gt; n;
+  int arr[n];
+  cout &lt;&lt; "Enter elements: ";
+  for(int i=0; i&lt;n; i++) {
+    cin &gt;&gt; arr[i];
+  }
+  quickSort(arr, 0, n - 1);
+  cout &lt;&lt; "Sorted Array: ";
+  for(int i=0; i&lt;n; i++) {
+    cout &lt;&lt; arr[i] &lt;&lt; " ";
+  }
+  cout &lt;&lt; endl;
+  return 0;
+}
+        </code>
+      </pre>
+
+      <span>
+        <h3>Merge sorting:</h3>
+      </span>
+
+      <pre>
+        <code>
+#include &lt;iostream&gt;
+using namespace std;
+void merge(int arr[], int l, int m, int r) {
+  int n1 = m - l + 1;
+  int n2 = r - m;
+  int L[n1], R[n2];
+  for (int i = 0; i &lt; n1; i++)
+    L[i] = arr[l + i];
+  for (int j = 0; j &lt; n2; j++)
+    R[j] = arr[m + 1 + j];
+  int i = 0, j = 0, k = l;
+  while (i &lt; n1 && j &lt; n2) {
+    if (L[i] &lt;= R[j]) {
+      arr[k] = L[i];
+      i++;
+    } else {
+      arr[k] = R[j];
+      j++;
+    }
+    k++;
+  }
+  while (i &lt; n1) {
+    arr[k] = L[i];
+    i++;
+    k++;
+  }
+  while (j &lt; n2) {
+    arr[k] = R[j];
+    j++;
+    k++;
+  }
+}
+void mergeSort(int arr[], int l, int r) {
+  if (l &lt; r) {
+    int m = l + (r - l) / 2;
+    mergeSort(arr, l, m);
+    mergeSort(arr, m + 1, r);
+    merge(arr, l, m, r);
+  }
+}
+int main() {
+  int n;
+  cout &lt;&lt; "Enter number of elements: ";
+  cin &gt;&gt; n;
+  int arr[n];
+  cout &lt;&lt; "Enter elements: ";
+  for(int i=0; i&lt;n; i++) {
+    cin &gt;&gt; arr[i];
+  }
+  mergeSort(arr, 0, n - 1);
+  cout &lt;&lt; "Sorted Array: ";
+  for(int i=0; i&lt;n; i++) {
+    cout &lt;&lt; arr[i] &lt;&lt; " ";
+  }
+  cout &lt;&lt; endl;
+  return 0;
+}
+        </code>
+      </pre>
+
     </main>
+
   </div>
 
 </body>
