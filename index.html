@@ -705,6 +705,41 @@ int main() {
         </code>
       </pre>
 
+      <span>
+        <h3>Friend Function:</h3>
+      </span>      
+
+      <pre>
+        <code>
+#include &lt; iostream & gt;
+using namespace std;
+class A
+{
+  int a,b;
+  friend void function(A);//friend function declaration
+  public:
+  void set(int x,int y)
+  {
+    a=x;
+    b=y;
+  }
+};
+void function(A obj)//friend function definition
+{
+  cout&lt;&lt;"a="&lt;&lt;obj.a&lt;&lt;endl;
+  cout&lt;&lt;"b="&lt;&lt;obj.b&lt;&lt;endl;
+  cout&lt;&lt;"sum="&lt;&lt;obj.a+obj.b&lt;&lt;endl;
+}
+int main()
+{
+  A obj;
+  obj.set(10,20);
+  function(obj);//friend function call
+  return 0;
+}          
+        </code>
+      </pre>
+
     </main>
 
   </div>
