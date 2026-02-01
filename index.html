@@ -468,6 +468,46 @@ int main()
       </pre>
 
       <span>
+        <h3>operator overloading Binary:</h3>
+      </span> 
+      
+      <pre>
+        <code>
+#include &lt;iostream&gt;  
+using namespace std;
+class A
+{
+  int a,b;
+  public:
+  void set(int x, int y)
+  {
+    a = x;
+    b = y;
+  }
+  void display()
+  {
+    cout &lt;&lt; "a: " &lt;&lt; a &lt;&lt; ", b: " &lt;&lt; b &lt;&lt; endl;
+  }
+  A operator=(A obj)
+  {
+    A t;
+    t.a = a = obj.a;
+    t.b = b = obj.b;
+    return t;
+  }
+};
+int main()
+{
+  A obj1, obj2;
+  obj1.set(10,20);
+  obj2 = obj1;
+  obj2.display();
+  return 0;
+}
+        </code>
+      </pre>
+
+      <span>
         <h3>linear search in an array:</h3>
       </span>
 
