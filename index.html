@@ -9,7 +9,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/atom-one-dark.min.css">
   <title>C++ programs</title>
 </head>
-  
+
 <body>
 
   <!-- Sidebar Navigation -->
@@ -30,18 +30,19 @@
   <div class="main-wrapper">
     <div class="content-container">
 
-    <header>
-      <h1>C++ Programming Examples</h1>
-      <p style="color: #64748b; margin-top: 0.5rem;">A comprehensive collection of standard algorithms and concepts.</p>
-    </header>
+      <header>
+        <h1>C++ Programming Examples</h1>
+        <p style="color: #64748b; margin-top: 0.5rem;">A comprehensive collection of standard algorithms and concepts.
+        </p>
+      </header>
 
-    <main>
+      <main>
 
-      <span>
-        <h3>Print Program: </h3>
-      </span>
+        <span>
+          <h3>Print Program: </h3>
+        </span>
 
-      <pre>
+        <pre>
        <code>
 #include &lt;iostream&gt;
 using namespace std;
@@ -53,11 +54,11 @@ int main()
        </code>
       </pre>
 
-      <span>
-        <h3>Pattern Making:</h3>
-      </span>
+        <span>
+          <h3>Pattern Making:</h3>
+        </span>
 
-      <pre>
+        <pre>
         <code>
 #include &lt;iostream&gt;
 using namespace std;
@@ -70,20 +71,92 @@ int main()
   {
     for (int j = 1; j &lt;= i; j++)
     {
-      cout &lt;&lt; "* "; 
+      cout &lt;&lt; " * "; 
     }
     cout &lt;&lt; endl;
   }
   return 0;
 }
         </code>
-      </pre>      
+      </pre>
 
-      <span>
-        <h3> pure virtual function:</h3>
-      </span>
+        <span>
+          <h3> 1D Array:</h3>
+        </span>
 
-      <pre>
+        <pre>
+        <code>
+#include &lt;iostream&gt;
+using namespace std;
+int main()
+{
+  int n;
+  cout &lt;&lt; "Enter the number of elements: ";
+  cin &gt;&gt; n;
+  int arr[n];
+  cout &lt;&lt; "Enter " &lt;&lt; n &lt;&lt; " elements: ";
+  //taking input for array elements
+  for (int i = 0; i &lt; n; i++)
+  {
+    cin &gt;&gt; arr[i];
+  }
+  cout &lt;&lt; "The elements in the array are: ";
+  //displaying array elements
+  for (int i = 0; i &lt; n; i++)
+  {
+    cout &lt;&lt; arr[i] &lt;&lt; " ";
+  }
+  cout &lt;&lt; endl;
+  return 0;
+}
+        </code>
+      </pre>
+
+        <span>
+          <h3> 2D Array:</h3>
+        </span>
+
+        <pre>
+        <code>
+#include &lt;iostream&gt;
+using namespace std;
+int main()
+{
+  int rows, cols;
+  cout &lt;&lt; "Enter number of rows: ";
+  cin &gt;&gt; rows;
+  cout &lt;&lt; "Enter number of columns: ";
+  cin &gt;&gt; cols;
+  int arr[rows][cols];
+  cout &lt;&lt; "Enter elements of the array: " &lt;&lt; endl;
+  //taking input for 2D array elements
+  for (int i = 0; i &lt; rows; i++)
+  {
+    for (int j = 0; j &lt; cols; j++)
+    {
+      cin &gt;&gt; arr[i][j];
+    }
+  }
+  cout &lt;&lt; "The elements in the 2D array are: " &lt;&lt; endl;
+  //displaying 2D array elements
+  for (int i = 0; i &lt; rows; i++)
+  {   
+    for (int j = 0; j &lt; cols; j++)
+    {
+      cout &lt;&lt; arr[i][j] &lt;&lt; " ";
+    }
+    cout &lt;&lt; endl;
+  }
+  return 0;
+}          
+        </code>
+      </pre>
+
+        <span>
+          <h3> pure virtual function:</h3>
+        </span>
+
+        <pre>
         <code>
 #include &lt;iostream&gt;
 using namespace std;
@@ -109,11 +182,11 @@ int main()
         </code>
       </pre>
 
-      <span>
-        <h3> Factorial (Standard approach)</h3>
-      </span>
+        <span>
+          <h3> Factorial (Standard approach)</h3>
+        </span>
 
-      <pre>
+        <pre>
         <code>
 #include &lt;iostream&gt;
 using namespace std;
@@ -140,11 +213,11 @@ int main()
         </code>
       </pre>
 
-      <span>
-        <h3>Factorial (Recursive approach):</h3>
-      </span>
+        <span>
+          <h3>Factorial (Recursive approach):</h3>
+        </span>
 
-      <pre>
+        <pre>
         <code>
 #include &lt;iostream&gt;
 using namespace std;
@@ -166,11 +239,11 @@ int main()
         </code>
       </pre>
 
-      <span>
-        <h3>Fibonacci Series: </h3>
-      </span>
+        <span>
+          <h3>Fibonacci Series: </h3>
+        </span>
 
-      <pre>
+        <pre>
         <code>
 #include &lt;iostream&gt;
 using namespace std;
@@ -195,11 +268,11 @@ int main()
         </code>
       </pre>
 
-      <span>
-        <h3>inheritance(single inheritance): </h3>
-      </span>
+        <span>
+          <h3>inheritance(single inheritance): </h3>
+        </span>
 
-      <pre>
+        <pre>
         <code>
 #include &lt;iostream&gt;
 using namespace std;
@@ -229,11 +302,11 @@ int main()
         </code>
       </pre>
 
-      <span>
-        <h3>multiple inheritance:</h3>
-      </span>
+        <span>
+          <h3>multiple inheritance:</h3>
+        </span>
 
-      <pre>
+        <pre>
         <code>
 #include &lt;iostream&gt;
 using namespace std;
@@ -272,11 +345,11 @@ int main()
         </code>
       </pre>
 
-      <span>
-        <h3>Multilevel inheritance:</h3>
-      </span>
+        <span>
+          <h3>Multilevel inheritance:</h3>
+        </span>
 
-      <pre>
+        <pre>
         <code>
 #include &lt;iostream&gt;
 using namespace std;
@@ -307,11 +380,11 @@ class C : public B
         </code>
       </pre>
 
-      <span>
-        <h3>hierarchical Inheritance:</h3>
-      </span>
+        <span>
+          <h3>hierarchical Inheritance:</h3>
+        </span>
 
-      <pre>
+        <pre>
         <code>
 #include &lt;iostream&gt;
 using namespace std;
@@ -342,11 +415,11 @@ class C : public A
         </code>
       </pre>
 
-      <span>
-        <h3>Hybrid Inheritance:</h3>
-      </span>
+        <span>
+          <h3>Hybrid Inheritance:</h3>
+        </span>
 
-      <pre>
+        <pre>
         <code>
 #include &lt;iostream&gt;
 using namespace std;
@@ -394,11 +467,11 @@ int main()
         </code>
       </pre>
 
-      <span>
-        <h3> operator overloading arithmetic:</h3>
-      </span>
+        <span>
+          <h3> operator overloading arithmetic:</h3>
+        </span>
 
-      <pre>
+        <pre>
         <code>
 #include &lt;iostream&gt;  
 using namespace std;
@@ -435,11 +508,11 @@ int main()
         </code>
       </pre>
 
-      <span>
-        <h3>operator overloading unary:</h3>
-      </span>
+        <span>
+          <h3>operator overloading unary:</h3>
+        </span>
 
-      <pre>
+        <pre>
         <code>
 #include &lt;iostream&gt;
 using namespace std;
@@ -493,11 +566,11 @@ int main()
         </code>
       </pre>
 
-      <span>
-        <h3>operator overloading Binary:</h3>
-      </span> 
-      
-      <pre>
+        <span>
+          <h3>operator overloading Binary:</h3>
+        </span>
+
+        <pre>
         <code>
 #include &lt;iostream&gt;  
 using namespace std;
@@ -533,11 +606,11 @@ int main()
         </code>
       </pre>
 
-      <span>
-        <h3>linear search in an array:</h3>
-      </span>
+        <span>
+          <h3>linear search in an array:</h3>
+        </span>
 
-      <pre>
+        <pre>
         <code>
 //linear search in an array
 #include &lt;iostream&gt;
@@ -577,11 +650,11 @@ int main()
         </code>
       </pre>
 
-      <span>
-        <h3>Bineary search in an array:</h3>
-      </span>
+        <span>
+          <h3>Bineary search in an array:</h3>
+        </span>
 
-      <pre>
+        <pre>
         <code>
 //binary search in an array 
 #include &lt;iostream&gt;
@@ -623,11 +696,11 @@ int main(){
         </code>
       </pre>
 
-      <span>
-        <h3>Bubble sorting: </h3>
-      </span>
+        <span>
+          <h3>Bubble sorting: </h3>
+        </span>
 
-      <pre>
+        <pre>
         <code>
 #include &lt;iostream&gt;
 using namespace std;
@@ -659,11 +732,11 @@ int main() {
         </code>
       </pre>
 
-      <span>
-        <h3>Quick sorting:</h3>
-      </span>
-      
-      <pre>
+        <span>
+          <h3>Quick sorting:</h3>
+        </span>
+
+        <pre>
         <code>
 #include &lt;iostream&gt;
 using namespace std;
@@ -712,11 +785,11 @@ int main()
         </code>
       </pre>
 
-      <span>
-        <h3>Merge sorting:</h3>
-      </span>
+        <span>
+          <h3>Merge sorting:</h3>
+        </span>
 
-      <pre>
+        <pre>
         <code>
 #include &lt;iostream&gt;
 using namespace std;
@@ -778,11 +851,11 @@ int main() {
         </code>
       </pre>
 
-      <span>
-        <h3>Friend Function:</h3>
-      </span>      
+        <span>
+          <h3>Friend Function:</h3>
+        </span>
 
-      <pre>
+        <pre>
         <code>
 #include &lt;iostream&gt;
 using namespace std;
@@ -813,7 +886,7 @@ int main()
         </code>
       </pre>
 
-    </main>
+      </main>
 
     </div> <!-- End content-container -->
   </div>
