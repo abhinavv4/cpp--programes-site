@@ -61,12 +61,52 @@
         main.innerHTML = '';
         main.appendChild(newContent);
 
+        // Scroll Spy (Active TOC)
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const id = entry.target.id;
+                    document.querySelectorAll('#toc a').forEach(a => a.classList.remove('active'));
+                    const activeLink = document.querySelector(`#toc a[href="#${id}"]`);
+                    if (activeLink) {
+                        activeLink.classList.add('active');
+                        activeLink.scrollIntoView({ block: 'nearest', behavior: 'smooth' });
+                    }
+                }
+            });
+        }, { root: document.querySelector('.main-wrapper'), rootMargin: '-10% 0px -80% 0px' });
+
+        document.querySelectorAll('.program-section').forEach(section => {
+            observer.observe(section);
+        });
+
         // Mobile Toggle
         document.getElementById('sidebar-header').addEventListener('click', () => {
             if(window.innerWidth <= 900) {
                 toc.classList.toggle('show');
             }
         });
+
+        // Dark Mode Toggle
+        const sidebarHeader = document.getElementById('sidebar-header');
+        const themeBtn = document.createElement('button');
+        themeBtn.id = 'theme-toggle';
+        themeBtn.innerHTML = '<i class="fas fa-moon"></i>';
+        themeBtn.title = "Toggle Dark Mode";
+        
+        if (localStorage.getItem('theme') === 'dark') {
+            document.body.classList.add('dark-mode');
+            themeBtn.innerHTML = '<i class="fas fa-sun"></i>';
+        }
+
+        themeBtn.addEventListener('click', (e) => {
+            e.stopPropagation(); // Prevent sidebar toggle on mobile
+            document.body.classList.toggle('dark-mode');
+            const isDark = document.body.classList.contains('dark-mode');
+            themeBtn.innerHTML = isDark ? '<i class="fas fa-sun"></i>' : '<i class="fas fa-moon"></i>';
+            localStorage.setItem('theme', isDark ? 'dark' : 'light');
+        });
+        sidebarHeader.appendChild(themeBtn);
 
         // Search Filter
         const searchInput = document.getElementById('search-input');
