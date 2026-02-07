@@ -240,6 +240,54 @@ int main()
       </pre>
 
         <span>
+          <h3>Stack push/pop fucntion:</h3>
+        </span>
+
+        <pre>
+      <code>
+#include &lt;iostream&gt;
+using namespace std;
+int stack[5]={1,2,3,4,5};
+int top=-1;
+void push(int x)
+{
+  if(top==4)
+  {
+    cout &lt;&lt; "stack overflow\n";
+  } 
+  else
+  {
+    top++;
+    stack[top]=x;
+  }
+}
+void pop()
+{
+  if(top==-1)
+  {
+    cout &lt;&lt; "stack underflow\n";  
+  }
+  else
+  {
+    cout &lt;&lt; "popped element: " &lt;&lt; stack[top] &lt;&lt; endl;
+    top--;
+  }
+}
+int main()
+{
+  push(6);
+  pop();
+  pop();
+  pop();
+  pop();
+  pop();
+  pop();  
+  return 0;
+}
+      </code>
+      </pre>
+
+        <span>
           <h3>Fibonacci Series: </h3>
         </span>
 
