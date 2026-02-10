@@ -1010,6 +1010,35 @@ int main()
 }          
         </code>
       </pre>
+
+          <span>
+            <h3>Static data member:</h3>
+          </span>
+          <pre>
+        <code>
+#include &lt;iostream&gt;
+using namespace std;
+class A
+{
+  int a;
+  public:
+  static int count; // static data member declaration
+  void setdata(int x)
+  {
+    a = x;
+    cout &lt;&lt; "Value of a: " &lt;&lt; a &lt;&lt; endl;
+  }
+};
+int A::count = 0; // static data member definition and initialization
+int main()
+{  A obj1, obj2;
+  obj1.setdata(10);
+  obj2.setdata(20);
+  cout &lt;&lt; "Static count: " &lt;&lt; A::count &lt;&lt; endl;
+  return 0;
+}
+        </code>
+      </pre>
         </main>
       </div>
       <!-- End content-container -->
