@@ -1,127 +1,390 @@
-    document.addEventListener('DOMContentLoaded', () => {
-        const main = document.querySelector('main');
-        const toc = document.getElementById('toc');
-        const children = Array.from(main.children);
-        const newContent = document.createDocumentFragment();
+:root {
+  --bg: #f4f7fb;
+  --bg-accent: #e8f0ff;
+  --surface: #ffffff;
+  --surface-soft: #f8fafc;
+  --text: #13233a;
+  --text-muted: #4e5f79;
+  --brand: #0f6ddf;
+  --brand-strong: #0a4fa8;
+  --border: #d5dfef;
+  --shadow: 0 14px 40px rgba(17, 45, 84, 0.12);
+  --radius: 14px;
+}
 
-        for (let i = 0; i < children.length; i++) {
-            const child = children[i];
-            if (child.tagName === 'SPAN') {
-                const h3 = child.querySelector('h3');
-                if (h3) {
-                    // Create Section
-                    const section = document.createElement('div');
-                    section.className = 'program-section';
-                    
-                    // Process Title & ID
-                    const rawTitle = h3.innerText.replace(/:/g, '').trim();
-                    const id = rawTitle.toLowerCase().replace(/[^a-z0-9]+/g, '-');
-                    section.id = id;
-                    
-                    // Add to TOC
-                    const li = document.createElement('li');
-                    li.innerHTML = `<a href="#${id}">${rawTitle}</a>`;
-                    toc.appendChild(li);
+body.dark {
+  --bg: #0f172a;
+  --bg-accent: #1e293b;
+  --surface: #111f35;
+  --surface-soft: #152741;
+  --text: #e2e8f0;
+  --text-muted: #9fb3ce;
+  --brand: #7db7ff;
+  --brand-strong: #b6d6ff;
+  --border: #2a3d5c;
+  --shadow: 0 18px 48px rgba(3, 11, 24, 0.45);
+}
 
-                    // Create Header for Section
-                    const headerDiv = document.createElement('h3');
-                    headerDiv.innerText = rawTitle;
-                    
-                    // Check for Code Block
-                    if (children[i+1] && children[i+1].tagName === 'PRE') {
-                        const pre = children[i+1];
-                        pre.querySelector('code').classList.add('language-cpp');
-                        
-                        // Copy Button
-                        const btn = document.createElement('button');
-                        btn.className = 'copy-btn';
-                        btn.innerHTML = '<i class="far fa-copy"></i> Copy';
-                        btn.onclick = () => {
-                            const code = pre.querySelector('code').innerText;
-                            navigator.clipboard.writeText(code);
-                            btn.innerHTML = '<i class="fas fa-check"></i> Copied!';
-                            btn.classList.add('copied');
-                            setTimeout(() => { btn.innerHTML = '<i class="far fa-copy"></i> Copy'; btn.classList.remove('copied'); }, 2000);
-                        };
-                        
-                        // Append button to pre
-                        pre.appendChild(btn);
-                        
-                        section.appendChild(headerDiv);
-                        section.appendChild(pre);
-                        i++; // Skip pre
-                    } else {
-                        section.appendChild(headerDiv);
-                    }
-                    newContent.appendChild(section);
-                }
-            }
-        }
-        
-        main.innerHTML = '';
-        main.appendChild(newContent);
+* {
+  box-sizing: border-box;
+}
 
-        // Scroll Spy (Active TOC)
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    const id = entry.target.id;
-                    document.querySelectorAll('#toc a').forEach(a => a.classList.remove('active'));
-                    const activeLink = document.querySelector(`#toc a[href="#${id}"]`);
-                    if (activeLink) {
-                        activeLink.classList.add('active');
-                        activeLink.scrollIntoView({ block: 'nearest', behavior: 'smooth' });
-                    }
-                }
-            });
-        }, { root: document.querySelector('.main-wrapper'), rootMargin: '-10% 0px -80% 0px' });
+html,
+body {
+  margin: 0;
+  min-height: 100%;
+}
 
-        document.querySelectorAll('.program-section').forEach(section => {
-            observer.observe(section);
-        });
+body {
+  font-family: "Space Grotesk", "Segoe UI", sans-serif;
+  color: var(--text);
+  background:
+    radial-gradient(circle at 10% 10%, rgba(79, 146, 255, 0.18), transparent 34%),
+    radial-gradient(circle at 88% 16%, rgba(34, 197, 94, 0.14), transparent 28%),
+    linear-gradient(180deg, var(--bg-accent) 0%, var(--bg) 52%);
+  display: flex;
+  height: 100vh;
+  overflow: hidden;
+}
 
-        // Mobile Toggle
-        document.getElementById('sidebar-header').addEventListener('click', () => {
-            if(window.innerWidth <= 900) {
-                toc.classList.toggle('show');
-            }
-        });
+.skip-link {
+  position: absolute;
+  left: 1rem;
+  top: -3rem;
+  background: var(--brand);
+  color: #fff;
+  padding: 0.55rem 0.85rem;
+  border-radius: 10px;
+  text-decoration: none;
+  z-index: 999;
+}
 
-        // Dark Mode Toggle
-        const sidebarHeader = document.getElementById('sidebar-header');
-        const themeBtn = document.createElement('button');
-        themeBtn.id = 'theme-toggle';
-        themeBtn.innerHTML = '<i class="fas fa-moon"></i>';
-        themeBtn.title = "Toggle Dark Mode";
-        
-        if (localStorage.getItem('theme') === 'dark') {
-            document.body.classList.add('dark-mode');
-            themeBtn.innerHTML = '<i class="fas fa-sun"></i>';
-        }
+.skip-link:focus {
+  top: 1rem;
+}
 
-        themeBtn.addEventListener('click', (e) => {
-            e.stopPropagation(); // Prevent sidebar toggle on mobile
-            document.body.classList.toggle('dark-mode');
-            const isDark = document.body.classList.contains('dark-mode');
-            themeBtn.innerHTML = isDark ? '<i class="fas fa-sun"></i>' : '<i class="fas fa-moon"></i>';
-            localStorage.setItem('theme', isDark ? 'dark' : 'light');
-        });
-        sidebarHeader.appendChild(themeBtn);
+#overlay {
+  display: none;
+}
 
-        // Search Filter
-        const searchInput = document.getElementById('search-input');
-        searchInput.addEventListener('input', (e) => {
-            const term = e.target.value.toLowerCase();
-            const items = toc.querySelectorAll('li');
-            
-            items.forEach(item => {
-                const text = item.innerText.toLowerCase();
-                item.style.display = text.includes(term) ? 'block' : 'none';
-            });
-        });
+#sidebar {
+  width: 300px;
+  background: color-mix(in srgb, var(--surface) 92%, transparent);
+  border-right: 1px solid var(--border);
+  backdrop-filter: blur(12px);
+  display: flex;
+  flex-direction: column;
+  flex-shrink: 0;
+  z-index: 10;
+}
 
-        // Initialize Syntax Highlighting
-        if (typeof hljs !== 'undefined') {
-            hljs.highlightAll();
-        }
-    });
+#sidebar-header {
+  padding: 1.15rem 1.2rem;
+  border-bottom: 1px solid var(--border);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#sidebar-header h2 {
+  margin: 0;
+  font-size: 1.08rem;
+  color: var(--brand);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+#sidebar-toggle,
+#theme-toggle,
+#mobile-menu-btn {
+  border: 1px solid var(--border);
+  background: var(--surface-soft);
+  color: var(--text);
+  border-radius: 10px;
+  cursor: pointer;
+  font-family: inherit;
+}
+
+#sidebar-toggle {
+  width: 2.3rem;
+  height: 2.3rem;
+}
+
+.search-box {
+  padding: 1rem;
+  border-bottom: 1px solid var(--border);
+  position: relative;
+}
+
+.search-box i {
+  position: absolute;
+  left: 1.75rem;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--text-muted);
+  font-size: 0.88rem;
+}
+
+.search-box input {
+  width: 100%;
+  padding: 0.72rem 0.85rem 0.72rem 2.15rem;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  background: var(--surface-soft);
+  color: var(--text);
+  outline: none;
+  font-family: inherit;
+}
+
+.search-box input:focus {
+  border-color: var(--brand);
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--brand) 20%, transparent);
+}
+
+#toc {
+  list-style: none;
+  margin: 0;
+  padding: 0.75rem;
+  overflow-y: auto;
+  flex: 1;
+}
+
+#toc li a {
+  display: block;
+  padding: 0.62rem 0.78rem;
+  margin-bottom: 0.3rem;
+  text-decoration: none;
+  color: var(--text-muted);
+  border-radius: 10px;
+  border: 1px solid transparent;
+  transition: 0.2s ease;
+  font-size: 0.93rem;
+}
+
+#toc li a:hover,
+#toc li a.active {
+  color: var(--brand);
+  border-color: color-mix(in srgb, var(--brand) 24%, transparent);
+  background: color-mix(in srgb, var(--brand) 10%, var(--surface));
+}
+
+.sidebar-note {
+  margin: 0;
+  padding: 0.9rem 1rem 1.1rem;
+  border-top: 1px solid var(--border);
+  color: var(--text-muted);
+  font-size: 0.85rem;
+}
+
+.main-wrapper {
+  flex: 1;
+  overflow-y: auto;
+  scroll-behavior: smooth;
+}
+
+.content-container {
+  max-width: 1040px;
+  margin: 0 auto;
+  padding: 2.5rem;
+}
+
+.page-header {
+  background: color-mix(in srgb, var(--surface) 92%, transparent);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 1.35rem 1.4rem 1.6rem;
+  margin-bottom: 2rem;
+}
+
+.header-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+}
+
+.eyebrow {
+  margin: 0;
+  color: var(--brand);
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.page-header h1 {
+  margin: 0.55rem 0 0;
+  font-size: clamp(1.8rem, 4vw, 2.6rem);
+  line-height: 1.1;
+}
+
+.subtitle {
+  margin: 0.7rem 0 0;
+  color: var(--text-muted);
+}
+
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+#theme-toggle,
+#mobile-menu-btn {
+  padding: 0.52rem 0.74rem;
+  font-size: 0.87rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+}
+
+.stats {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.75rem;
+  margin-top: 1rem;
+}
+
+.stat {
+  padding: 0.75rem;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  background: var(--surface-soft);
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+
+.stat strong {
+  color: var(--brand-strong);
+  font-size: 1rem;
+}
+
+.stat span {
+  color: var(--text-muted);
+  font-size: 0.84rem;
+}
+
+main {
+  display: grid;
+  gap: 1.2rem;
+}
+
+.program-section {
+  border: 1px solid var(--border);
+  background: color-mix(in srgb, var(--surface) 94%, transparent);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  overflow: hidden;
+  animation: rise-in 0.34s ease;
+}
+
+@keyframes rise-in {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.program-section h3 {
+  margin: 0;
+  font-size: 1.04rem;
+  padding: 0.95rem 1.15rem;
+  border-bottom: 1px solid var(--border);
+  background: linear-gradient(90deg, color-mix(in srgb, var(--brand) 16%, transparent), transparent);
+}
+
+pre {
+  margin: 0;
+  padding: 1rem;
+  overflow-x: auto;
+}
+
+pre code {
+  font-family: "JetBrains Mono", Consolas, Monaco, monospace;
+  font-size: 0.9rem;
+  line-height: 1.62;
+}
+
+.copy-btn {
+  position: absolute;
+  right: 0.9rem;
+  top: 0.8rem;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  background: rgba(9, 14, 28, 0.45);
+  color: #fff;
+  border-radius: 8px;
+  padding: 0.35rem 0.58rem;
+  font-size: 0.8rem;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+.copy-btn.copied {
+  background: #15803d;
+  border-color: #1f9f4f;
+}
+
+pre {
+  position: relative;
+}
+
+#mobile-menu-btn {
+  display: none;
+}
+
+@media (max-width: 980px) {
+  body {
+    overflow: auto;
+    display: block;
+  }
+
+  #sidebar {
+    position: fixed;
+    inset: 0 auto 0 0;
+    height: 100vh;
+    transform: translateX(-102%);
+    transition: transform 0.24s ease;
+    width: min(320px, 84vw);
+  }
+
+  body.menu-open #sidebar {
+    transform: translateX(0);
+  }
+
+  #overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(8, 16, 30, 0.5);
+    z-index: 9;
+  }
+
+  body.menu-open #overlay {
+    display: block;
+  }
+
+  .content-container {
+    padding: 1rem;
+  }
+
+  .header-top {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .stats {
+    grid-template-columns: 1fr;
+  }
+
+  #mobile-menu-btn {
+    display: inline-flex;
+  }
+}
