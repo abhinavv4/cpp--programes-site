@@ -69,7 +69,7 @@ int main()
 {
   int n;
   cout &lt;&lt; "Enter the number of rows: ";
-  cin &gt;&gt; n;
+  cin &lt;&lt; n;
   for (int i = 1; i &lt;= n; i++)
   {
     for (int j = 1; j &lt;= i; j++)
@@ -95,13 +95,13 @@ int main()
 {
   int n;
   cout &lt;&lt; "Enter the number of elements: ";
-  cin &gt;&gt; n;
+  cin &lt;&lt; n;
   int arr[n];
   cout &lt;&lt; "Enter " &lt;&lt; n &lt;&lt; " elements: ";
   //taking input for array elements
   for (int i = 0; i &lt; n; i++)
   {
-    cin &gt;&gt; arr[i];
+    cin &lt;&lt; arr[i];
   }
   cout &lt;&lt; "The elements in the array are: ";
   //displaying array elements
@@ -127,9 +127,9 @@ int main()
 {
   int rows, cols;
   cout &lt;&lt; "Enter number of rows: ";
-  cin &gt;&gt; rows;
+  cin &lt;&lt; rows;
   cout &lt;&lt; "Enter number of columns: ";
-  cin &gt;&gt; cols;
+  cin &lt;&lt; cols;
   int arr[rows][cols];
   cout &lt;&lt; "Enter elements of the array: " &lt;&lt; endl;
   //taking input for 2D array elements
@@ -137,7 +137,7 @@ int main()
   {
     for (int j = 0; j &lt; cols; j++)
     {
-      cin &gt;&gt; arr[i][j];
+      cin &lt;&lt; arr[i][j];
     }
   }
   cout &lt;&lt; "The elements in the 2D array are: " &lt;&lt; endl;
@@ -198,7 +198,7 @@ int main()
 {
   int num, fact=1;
   cout &lt;&lt; " enter any positive integer\n";
-  cin &gt;&gt; num;
+  cin &lt;&lt; num;
   if(num&lt;=0)
   {
     cout &lt;&lt; " not defined\n";
@@ -235,7 +235,7 @@ int main()
 {
   int num;
   cout &lt;&lt; "Enter a positive integer: ";
-  cin &gt;&gt; num;
+  cin &lt;&lt; num;
   cout &lt;&lt; "Factorial of " &lt;&lt; num &lt;&lt; " = " &lt;&lt; factorial(num) &lt;&lt; endl;
   return 0;
 }
@@ -302,7 +302,7 @@ int main()
 {
   int n;
   cout &lt;&lt; "enter the position of fibonacci series";
-  cin &gt;&gt; n;
+  cin &lt;&lt; n;
   int t1 = 0, t2 = 1, nxtterm = 0;
   cout &lt;&lt; "Fibonacci series:";
   for (int i = 0; i &lt;= n; ++i)
@@ -670,18 +670,18 @@ int main()
 {       
   int n,flag=0;
   cout &lt;&lt; "Enter the number of elements in the array: ";
-  cin &gt;&gt; n;
+  cin &lt;&lt; n;
 
   int arr[n];
   cout &lt;&lt; "Enter the elements of the array: ";
   for(int i=0;i&lt;n;i++)
   {
-    cin &gt;&gt; arr[i];
+    cin &lt;&lt; arr[i];
   }
 
   int key;
   cout &lt;&lt; "Enter the element to be searched: ";
-  cin &gt;&gt; key;
+  cin &lt;&lt; key;
   for(int i=0;i&lt;n;i++)
   {
     if(arr[i]==key)
@@ -713,14 +713,14 @@ using namespace std;
 int main(){
     int n, key;
     cout &lt;&lt; "Enter number of elements: \n";
-    cin &gt;&gt; n;
+    cin &lt;&lt; n;
     int arr[n];
     cout &lt;&lt; "Enter elements in sorted order: \n";
     for(int i = 0; i &lt; n; i++){
-        cin &gt;&gt; arr[i];
+        cin &lt;&lt; arr[i];
     }
     cout &lt;&lt; "Enter element to search: \n";
-    cin &gt;&gt; key;
+    cin &lt;&lt; key;
     int left = 0, right = n - 1, mid;
     bool found = false;
     while(left &lt;= right){
@@ -758,11 +758,11 @@ using namespace std;
 int main() {
   int n;
   cout &lt;&lt; "Enter number of elements: ";
-  cin &gt;&gt; n;
+  cin &lt;&lt; n;
   int arr[n];
   cout &lt;&lt; "Enter elements: ";
   for(int i=0; i&lt;n; i++) {
-    cin &gt;&gt; arr[i];
+    cin &lt;&lt; arr[i];
   }
   for(int i=1; i&lt;n; i++) {
     int key = arr[i];
@@ -794,11 +794,11 @@ using namespace std;
 int main() {
   int n;
   cout &lt;&lt; "Enter number of elements: ";
-  cin &gt;&gt; n;
+  cin &lt;&lt; n;
   int arr[n];
   cout &lt;&lt; "Enter elements: ";
   for(int i=0; i&lt;n; i++) {
-    cin &gt;&gt; arr[i];
+    cin &lt;&lt; arr[i];
   }
   for(int i=0; i&lt;n-1; i++) {
     for(int j=0; j&lt;n-i-1; j++) {
@@ -855,11 +855,11 @@ int main()
 {
   int n;
   cout &lt;&lt; "Enter number of elements: ";
-  cin &gt;&gt; n;
+  cin &lt;&lt; n;
   int arr[n];
   cout &lt;&lt; "Enter elements: ";
   for(int i=0; i&lt;n; i++) {
-    cin &gt;&gt; arr[i];
+    cin &lt;&lt; arr[i];
   }
   quickSort(arr, 0, n - 1);
   cout &lt;&lt; "Sorted Array: ";
@@ -921,11 +921,11 @@ void mergeSort(int arr[], int l, int r) {
 int main() {
   int n;
   cout &lt;&lt; "Enter number of elements: ";
-  cin &gt;&gt; n;
+  cin &lt;&lt; n;
   int arr[n];
   cout &lt;&lt; "Enter elements: ";
   for(int i=0; i&lt;n; i++) {
-    cin &gt;&gt; arr[i];
+    cin &lt;&lt; arr[i];
   }
   mergeSort(arr, 0, n - 1);
   cout &lt;&lt; "Sorted Array: ";
@@ -949,11 +949,11 @@ using namespace std;
 int main() {
   int n;
   cout &lt;&lt; "Enter number of elements: ";
-  cin &gt;&gt; n;
+  cin &lt;&lt; n;
   int arr[n];
   cout &lt;&lt; "Enter elements: ";
   for(int i=0; i&lt;n; i++) {
-    cin &gt;&gt; arr[i];
+    cin &lt;&lt; arr[i];
   }
   for(int i=0; i&lt;n-1; i++) {
     int min_idx = i;
@@ -1037,6 +1037,38 @@ int main()
   cout &lt;&lt; "Static count: " &lt;&lt; A::count &lt;&lt; endl;
   return 0;
 }
+        </code>
+      </pre>
+
+      <span>
+        <h3>Static Member Function:</h3>
+      </span>
+
+      <pre>
+        <code>
+#include &lt;iostream&gt;
+using namespace std;
+class bca
+{
+public:
+  static void soc()
+  {
+    cout &lt;&lt; "hello\n";
+  }
+};
+class bca2: public bca
+{
+  public:
+  void show()
+  {
+    cout &lt;&lt; "child class\n";
+  }
+};
+int main()
+{
+  bca2 ::soc();
+  return 0;
+}          
         </code>
       </pre>
         </main>
