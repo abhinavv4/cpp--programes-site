@@ -683,6 +683,133 @@ int main()
       </pre>
 
           <span>
+            <h3>Class-Object:</h3>
+          </span>
+
+          <pre>
+        <code>
+#include &lt;iostream&gt;
+using namespace std;
+class A // class declaration
+{
+  int a;// data member
+  public:// access specifier
+  void setdata(int x)// member function declaration
+  {
+    a = x;// member function definition
+  }
+  void display()// member function declaration
+  {
+    cout &lt;&lt; "Value of a: " &lt;&lt; a &lt;&lt; endl;
+  }  
+};
+int main()
+{ 
+  A obj;// object creation
+  obj.setdata(10);// member function call
+  obj.display();// member function call
+  return 0;
+}       
+        </code>
+      </pre>
+
+          <span>
+            <h3>Default Constructor:</h3>
+          </span>
+
+          <pre>
+        <code>
+#include &lt;iostream&gt;
+using namespace std;    
+class A// class declaration
+{
+  int a;// instance variable
+  public: // access specifier
+  A()// default constructor declaration
+  {
+    a = 0;// default constructor definition
+  }
+  void display()// member function declaration
+  {
+    cout &lt;&lt; "Value of a: " &lt;&lt; a &lt;&lt; endl;
+  }
+};
+int main()
+{
+  A obj;// object creation
+  obj.display();// member function call
+  return 0;
+}     
+        </code>
+      </pre>
+
+          <span>
+            <h3>Parameterized Constructor:</h3>
+          </span>
+
+          <pre>
+        <code>
+#include &lt;iostream&gt;
+using namespace std;
+class A// class declaration
+{
+  int a;// instance variable
+  public: // access specifier
+  A(int x)// parameterized constructor declaration
+  {
+    a = x;// parameterized constructor definition
+  }
+  void display()// member function declaration
+  {
+    cout &lt;&lt; "Value of a: " &lt;&lt; a &lt;&lt; endl;
+  } 
+};
+int main()
+{
+  A obj(10);// object creation with parameter
+  obj.display();// member function call
+  return 0;
+}           
+        </code>
+      </pre>
+
+          <span>
+            <h3>Copy Constructor:</h3>
+          </span>
+
+          <pre>
+        <code>
+#include &lt;iostream&gt;
+using namespace std;
+class A// class declaration
+{
+  int a;// instance variable
+  public: // access specifier
+  A(int x)// parameterized constructor declaration  
+  {
+    a = x;// parameterized constructor definition
+  }
+  A(A &obj)// copy constructor declaration
+  {
+    a = obj.a;// copy constructor definition
+  }
+  void display()// member function declaration
+  {
+    cout &lt;&lt; "Value of a: " &lt;&lt; a &lt;&lt; endl;
+  }
+};
+int main()
+{
+  A obj1(10);// object creation with parameter
+  A obj2 = obj1;// object creation using copy constructor
+  obj1.display();// member function call
+  obj2.display();// member function call
+  return 0;
+}
+        </code> 
+      </pre>
+
+          <span>
             <h3>pure virtual function:</h3>
           </span>
 
