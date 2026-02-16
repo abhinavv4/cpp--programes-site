@@ -1283,12 +1283,12 @@ int main()
         <code>
 #include &lt;iostream&gt;
 using namespace std;
-class calulator
+class calulator //class declaration
 {
-  float a, b, c;
+  float a, b, c;//instance variables
 
-public:
-  void set(float x, float y)
+public: //access specifier
+  void set(float x, float y) //member function declaration
   {
     a = x;
     b = y;
@@ -1310,7 +1310,7 @@ public:
   }
     void div()
   { 
-    if(b==0)
+    if(b==0)//checking for division by zero
     {
       cout&lt;&lt;"division by zero is not possible\n";
       return;
@@ -1325,7 +1325,7 @@ public:
       cout&lt;&lt;"modulus by zero is not possible\n";
       return;
     }
-    c = int(a) % int(b);
+    c = int(a) % int(b);//modulus operator works only with integers
     cout &lt;&lt; c&lt;&lt;endl;
   }
 };
@@ -1337,10 +1337,10 @@ int main()
   calulator obj;
   obj.set(m, n);
 
-  char operation;
+  char operation;//variable to store user input for operation
   cout &lt;&lt; "enter opertaion you want to perform\n";
   cin >> operation;
-  switch (operation)
+  switch (operation)//switch case to perform the desired operation
   {
   case '+':
     obj.add();
