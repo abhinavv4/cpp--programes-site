@@ -1274,6 +1274,102 @@ int main()
 }
         </code>
       </pre>
+
+      <span>
+        <h3>Simple Calculator</h3>
+      </span>
+
+      <pre>
+        <code>
+#include &lt;iostream&gt;
+using namespace std;
+class calulator
+{
+  float a, b, c;
+
+public:
+  void set(float x, float y)
+  {
+    a = x;
+    b = y;
+  }
+  void add()
+  {
+    c = a + b;
+    cout &lt;&lt; c&lt;&lt;endl;
+  }
+    void sub()
+  {
+    c = a - b;
+    cout &lt;&lt; c&lt;&lt;endl;
+  }
+    void pro()
+  {
+    c = a * b;
+    cout &lt;&lt; c&lt;&lt;endl;
+  }
+    void div()
+  { 
+    if(b==0)
+    {
+      cout&lt;&lt;"division by zero is not possible\n";
+      return;
+    }
+    c = a / b;
+    cout &lt;&lt; c&lt;&lt;endl;
+  }
+    void mod()
+  {
+    if(b==0)
+    {
+      cout&lt;&lt;"modulus by zero is not possible\n";
+      return;
+    }
+    c = int(a) % int(b);
+    cout &lt;&lt; c&lt;&lt;endl;
+  }
+};
+int main()
+{
+  float m, n;
+  cout &lt;&lt; "enter value of \n A:\n B:\n";
+  cin >> m >> n;
+  calulator obj;
+  obj.set(m, n);
+
+  char operation;
+  cout &lt;&lt; "enter opertaion you want to perform\n";
+  cin >> operation;
+  switch (operation)
+  {
+  case '+':
+    obj.add();
+    break;
+
+  case '-':
+    obj.sub();
+    break;
+  
+  case '*':
+    obj.pro();
+    break;
+
+  case '/':
+    obj.div();
+    break; 
+  
+  case '%':
+    obj.mod();
+    break;
+    
+  default:
+    cout &lt;&lt; "\nInvalid operation\n";
+    break;
+  }
+  return 0;
+}          
+        </code>
+      </pre>
         </main>
       </div>
       <!-- End content-container -->
