@@ -1276,6 +1276,49 @@ int main()
       </pre>
 
       <span>
+        <h3>Array of Object:</h3>
+      </span>
+
+      <pre>
+        <code>
+        <h3></h3></h2>
+#include &gt;iostream&lt;
+using namespace std;
+class BCA
+{
+  int rollno;
+
+public:
+  void set()
+  {
+    cin >> rollno;
+  }
+  void show()
+  {
+    cout &lt;&lt; rollno &lt;&lt; " ";
+  }
+};
+int main()
+{
+  BCA students[20];
+  int i, n;
+  cout &lt;&lt; "Enter the total no of students\n";
+  cin >> n;
+  cout &lt;&lt; "Enter " &lt;&lt; n &lt;&lt; " roll no\n";
+  for (i = 0; i < n; i++)
+  {
+    students[i].set();
+  }
+  for (i = 0; i < n; i++)
+  {
+    students[i].show();
+  }
+  return 0;
+}
+        </code>
+      </pre>
+
+      <span>
         <h3>Simple Calculator</h3>
       </span>
 
