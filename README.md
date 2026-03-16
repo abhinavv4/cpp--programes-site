@@ -1,45 +1,99 @@
 # C++ Programming Examples
 
-A comprehensive collection of standard C++ algorithms, data structures, and object-oriented programming concepts presented in a clean, navigable static website.
+A clean static C++ reference page with grouped examples, instant search, copy-ready code blocks, and a responsive sidebar.
 
-## 🚀 Features
+## Highlights
 
-- **Dynamic Table of Contents**: Automatically generates a sidebar navigation based on the programs listed in the HTML.
-- **Syntax Highlighting**: Uses [Highlight.js](https://highlightjs.org/) for beautiful C++ code presentation.
-- **Search Functionality**: Filter programs instantly using the sidebar search box.
-- **Copy to Clipboard**: One-click button to copy code snippets directly to your clipboard.
-- **Responsive Design**: Mobile-friendly sidebar with toggle support for smaller screens.
+- 33 C++ example programs
+- Grouped topics for faster browsing
+- Live search with sidebar filtering
+- One-click code copy
+- Syntax highlighting with Highlight.js
+- Responsive layout with theme toggle
 
-## 🛠️ Technologies Used
+## Project Structure
 
-- **HTML5**: Semantic structure.
-- **CSS3**: Styling and layout.
-- **JavaScript (ES6+)**: DOM manipulation for dynamic TOC, search, and interactivity.
-- **Font Awesome**: Icons for UI elements.
-- **Highlight.js**: Syntax highlighting for code blocks.
+```text
+web/
+└── cpp library/
+    ├── index.html   # page structure and program cards
+    ├── style.css    # layout, theme, and responsive styling
+    ├── script.js    # search, TOC, copy buttons, and interactions
+    └── ReadMe.md    # project documentation
+```
 
-## 📖 How to Run
+## What's Inside
 
-1. Clone the repository.
-2. Open `index.html` in any modern web browser.
-3. Browse through the topics in the sidebar or use the search bar to find specific algorithms.
+The page is organized into these topic groups:
 
-## 📝 Included Programs
+- Getting Started
+- Arrays and Search
+- Sorting
+- Practice and Utility
+- Class Basics
+- Inheritance and Polymorphism
+- Advanced OOP
 
-The collection currently includes:
-- **Basics**: Hello World, Factorial (Iterative & Recursive), Fibonacci Series.
-- **OOP Concepts**: 
-  - Pure Virtual Functions
-  - Friend Functions
-  - Inheritance (Single, Multiple, Multilevel, Hierarchical, Hybrid)
-  - Operator Overloading (Arithmetic, Unary)
-- **Algorithms**:
-  - **Searching**: Linear Search, Binary Search.
-  - **Sorting**: Bubble Sort, Quick Sort, Merge Sort.
+Some included programs:
 
-## 🤝 Contributing
+- Hello World
+- Pattern Making
+- 1D Array and 2D Array
+- Linear Search and Binary Search
+- Bubble Sort, Selection Sort, Insertion Sort, Merge Sort, and Quick Sort
+- Factorial and Fibonacci examples
+- Stack Push/Pop Function
+- Class-Object and constructor examples
+- Pure Virtual Function and inheritance examples
+- Operator overloading examples
+- Friend Function
+- Static Data Member and Static Member Function
+- Array of Object
+- Simple Calculator
 
-To add a new program:
-1. Open `index.html`.
-2. Inside the `<main>` tag, add a `<span><h3>Program Title</h3></span>` followed by a `<pre><code>...</code></pre>` block containing your C++ code.
-3. The JavaScript will automatically detect the new entry, format it, and add it to the navigation sidebar.
+## Files
+
+- [index.html](/d:/2.PROGRAMS/web/cpp liberay/index.html) contains the grouped `.topic-group` and `.program-section` markup.
+- [style.css](/d:/2.PROGRAMS/web/cpp liberay/style.css) controls the visual design, spacing, cards, sidebar, and responsive behavior.
+- [script.js](/d:/2.PROGRAMS/web/cpp liberay/script.js) generates the sidebar links, search behavior, copy buttons, section ids, and theme state.
+
+## How to Run
+
+1. Open [index.html](/d:/2.PROGRAMS/web/cpp liberay/index.html) in a modern browser.
+2. Browse topics from the sidebar.
+3. Use the search bar to filter programs by title, group, or keywords.
+
+No build step is required.
+
+## How to Add a New Program
+
+Add the new example inside the correct topic group in [index.html](/d:/2.PROGRAMS/web/cpp liberay/index.html).
+
+Use this format:
+
+```html
+<article class="program-section" data-keywords="extra search terms">
+  <h3>Program Title</h3>
+  <pre><code>
+// your C++ code here
+  </code></pre>
+</article>
+```
+
+Keep in mind:
+
+- Each entry should stay inside a `.topic-group`.
+- Add useful `data-keywords` so search works better.
+- The sidebar links, copy button, and search indexing are handled automatically by [script.js](/d:/2.PROGRAMS/web/cpp liberay/script.js).
+
+## Libraries Used
+
+- Google Fonts
+- Font Awesome
+- Highlight.js
+
+## Maintenance Notes
+
+- If a program does not appear in search, confirm it uses the `.program-section` structure.
+- If a program is added but the sidebar looks outdated, refresh the page once.
+- Renaming a program heading is safe because section ids are generated automatically.

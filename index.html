@@ -115,28 +115,32 @@
         </header>
 
         <main id="main-content" tabindex="-1">
-          <span>
-            <h3>Print Program:</h3>
-          </span>
+          <section class="topic-group" aria-labelledby="group-basics">
+            <div class="topic-group-header">
+              <p class="topic-group-label">Getting Started</p>
+              <h2 id="group-basics">Basic Console Programs</h2>
+              <p class="topic-group-description">
+                Simple programs to practice output, loops, and starter C++
+                syntax.
+              </p>
+            </div>
 
-          <pre>
-       <code>
+            <article class="program-section" data-keywords="hello world print program">
+              <h3>Hello World</h3>
+              <pre><code>
 #include &lt;iostream&gt;
 using namespace std;
-int main() 
+int main()
 {
   cout &lt;&lt; "Hello, World!" &lt;&lt; endl;
   return 0;
-} 
-       </code>
-      </pre>
+}
+              </code></pre>
+            </article>
 
-          <span>
-            <h3>Pattern Making:</h3>
-          </span>
-
-          <pre>
-        <code>
+            <article class="program-section" data-keywords="pattern making stars loops">
+              <h3>Pattern Making</h3>
+              <pre><code>
 #include &lt;iostream&gt;
 using namespace std;
 int main()
@@ -148,21 +152,30 @@ int main()
   {
     for (int j = 1; j &lt;= i; j++)
     {
-      cout &lt;&lt; "* "; 
+      cout &lt;&lt; "* ";
     }
     cout &lt;&lt; endl;
   }
   return 0;
 }
-        </code>
-      </pre>
+              </code></pre>
+            </article>
 
-          <span>
-            <h3>1D Array:</h3>
-          </span>
+          </section>
 
-          <pre>
-        <code>
+          <section class="topic-group" aria-labelledby="group-arrays">
+            <div class="topic-group-header">
+              <p class="topic-group-label">Arrays and Search</p>
+              <h2 id="group-arrays">Array Basics and Searching</h2>
+              <p class="topic-group-description">
+                Input, output, and search programs built around one-dimensional
+                and two-dimensional arrays.
+              </p>
+            </div>
+
+            <article class="program-section" data-keywords="1d array">
+              <h3>1D Array</h3>
+              <pre><code>
 #include &lt;iostream&gt;
 using namespace std;
 int main()
@@ -186,15 +199,12 @@ int main()
   cout &lt;&lt; endl;
   return 0;
 }
-        </code>
-      </pre>
+              </code></pre>
+            </article>
 
-          <span>
-            <h3>2D Array:</h3>
-          </span>
-
-          <pre>
-        <code>
+            <article class="program-section" data-keywords="2d array matrix">
+              <h3>2D Array</h3>
+              <pre><code>
 #include &lt;iostream&gt;
 using namespace std;
 int main()
@@ -226,20 +236,17 @@ int main()
   }
   return 0;
 }
-        </code>
-      </pre>
+              </code></pre>
+            </article>
 
-          <span>
-            <h3>linear search in an array:</h3>
-          </span>
-
-          <pre>
-        <code>
+            <article class="program-section" data-keywords="linear search array">
+              <h3>Linear Search in an Array</h3>
+              <pre><code>
 //linear search in an array
 #include &lt;iostream&gt;
 using namespace std;
 int main()
-{       
+{
   int n,flag=0;
   cout &lt;&lt; "Enter the number of elements in the array: ";
   cin &gt;&gt; n;
@@ -263,23 +270,20 @@ int main()
       break;
     }
   }
-  
+
   if(flag==0)
   {
     cout &lt;&lt; "Element not found in the array" &lt;&lt; endl;
   }
   return 0;
 }
-        </code>
-      </pre>
+              </code></pre>
+            </article>
 
-          <span>
-            <h3>Bineary search in an array:</h3>
-          </span>
-
-          <pre>
-        <code>
-//binary search in an array 
+            <article class="program-section" data-keywords="binary search bineary search array">
+              <h3>Binary Search in an Array</h3>
+              <pre><code>
+//binary search in an array
 #include &lt;iostream&gt;
 using namespace std;
 int main(){
@@ -315,16 +319,23 @@ int main(){
         cout &lt;&lt; "Element not found" &lt;&lt; endl;
     }
     return 0;
-}          
-        </code>
-      </pre>
+}
+              </code></pre>
+            </article>
+          </section>
 
-          <span>
-            <h3>Bubble sorting:</h3>
-          </span>
+          <section class="topic-group" aria-labelledby="group-sorting">
+            <div class="topic-group-header">
+              <p class="topic-group-label">Sorting</p>
+              <h2 id="group-sorting">Classic Sorting Algorithms</h2>
+              <p class="topic-group-description">
+                Basic comparison and divide-and-conquer sorting approaches.
+              </p>
+            </div>
 
-          <pre>
-        <code>
+            <article class="program-section" data-keywords="bubble sorting bubble sort">
+              <h3>Bubble Sort</h3>
+              <pre><code>
 #include &lt;iostream&gt;
 using namespace std;
 int main() {
@@ -352,15 +363,12 @@ int main() {
   cout &lt;&lt; endl;
   return 0;
 }
-        </code>
-      </pre>
+              </code></pre>
+            </article>
 
-          <span>
-            <h3>Selection sorting:</h3>
-          </span>
-
-          <pre>
-        <code>
+            <article class="program-section" data-keywords="selection sorting selection sort">
+              <h3>Selection Sort</h3>
+              <pre><code>
 #include &lt;iostream&gt;
 using namespace std;
 int main() {
@@ -390,15 +398,12 @@ int main() {
   cout &lt;&lt; endl;
   return 0;
 }
-        </code>
-      </pre>
+              </code></pre>
+            </article>
 
-          <span>
-            <h3>Insertion sorting:</h3>
-          </span>
-
-          <pre>
-        <code>
+            <article class="program-section" data-keywords="insertion sorting insertion sort">
+              <h3>Insertion Sort</h3>
+              <pre><code>
 #include &lt;iostream&gt;
 using namespace std;
 int main() {
@@ -413,7 +418,7 @@ int main() {
   for(int i = 1; i &lt; n; i++) {
     int key = arr[i];
     int j = i - 1;
-    while(j &gt;= 0 && arr[j] &gt; key) {
+    while(j &gt;= 0 &amp;&amp; arr[j] &gt; key) {
       arr[j + 1] = arr[j];
       j--;
     }
@@ -426,15 +431,12 @@ int main() {
   cout &lt;&lt; endl;
   return 0;
 }
-        </code>
-      </pre>
+              </code></pre>
+            </article>
 
-          <span>
-            <h3>Merge sorting:</h3>
-          </span>
-
-          <pre>
-        <code>
+            <article class="program-section" data-keywords="merge sorting merge sort">
+              <h3>Merge Sort</h3>
+              <pre><code>
 #include &lt;iostream&gt;
 using namespace std;
 void merge(int arr[], int l, int m, int r) {
@@ -446,7 +448,7 @@ void merge(int arr[], int l, int m, int r) {
   for (int j = 0; j &lt; n2; j++)
     R[j] = arr[m + 1 + j];
   int i = 0, j = 0, k = l;
-  while (i &lt; n1 && j &lt; n2) {
+  while (i &lt; n1 &amp;&amp; j &lt; n2) {
     if (L[i] &lt;= R[j]) {
       arr[k] = L[i];
       i++;
@@ -492,15 +494,12 @@ int main() {
   cout &lt;&lt; endl;
   return 0;
 }
-        </code>
-      </pre>
+              </code></pre>
+            </article>
 
-          <span>
-            <h3>Quick sorting:</h3>
-          </span>
-
-          <pre>
-        <code>
+            <article class="program-section" data-keywords="quick sorting quick sort">
+              <h3>Quick Sort</h3>
+              <pre><code>
 #include &lt;iostream&gt;
 using namespace std;
 int partition(int arr[], int low, int high)
@@ -545,15 +544,23 @@ int main()
   cout &lt;&lt; endl;
   return 0;
 }
-        </code>
-      </pre>
+              </code></pre>
+            </article>
+          </section>
 
-          <span>
-            <h3>Stack push/pop function:</h3>
-          </span>
+          <section class="topic-group" aria-labelledby="group-recursion">
+            <div class="topic-group-header">
+              <p class="topic-group-label">Practice and Utility</p>
+              <h2 id="group-recursion">Stacks, Factorials, and Sequences</h2>
+              <p class="topic-group-description">
+                Small practice programs covering stacks, iterative logic,
+                recursion, and number sequences.
+              </p>
+            </div>
 
-          <pre>
-        <code>
+            <article class="program-section" data-keywords="stack push pop function">
+              <h3>Stack Push/Pop Function</h3>
+              <pre><code>
 #include &lt;iostream&gt;
 using namespace std;
 int stack[5] = {1, 2, 3, 4, 5};
@@ -593,15 +600,12 @@ int main()
   pop();
   return 0;
 }
-        </code>
-      </pre>
+              </code></pre>
+            </article>
 
-          <span>
-            <h3>Factorial (Standard approach)</h3>
-          </span>
-
-          <pre>
-        <code>
+            <article class="program-section" data-keywords="factorial standard iterative approach">
+              <h3>Factorial (Standard Approach)</h3>
+              <pre><code>
 #include &lt;iostream&gt;
 using namespace std;
 // standard approach
@@ -624,15 +628,12 @@ int main()
   cout &lt;&lt; " Factorial: " &lt;&lt; fact &lt;&lt; endl;
   return 0;
 }
-        </code>
-      </pre>
+              </code></pre>
+            </article>
 
-          <span>
-            <h3>Factorial (Recursive approach):</h3>
-          </span>
-
-          <pre>
-        <code>
+            <article class="program-section" data-keywords="factorial recursive approach recursion">
+              <h3>Factorial (Recursive Approach)</h3>
+              <pre><code>
 #include &lt;iostream&gt;
 using namespace std;
 int factorial(int n)
@@ -650,15 +651,12 @@ int main()
   cout &lt;&lt; "Factorial of " &lt;&lt; num &lt;&lt; " = " &lt;&lt; factorial(num) &lt;&lt; endl;
   return 0;
 }
-        </code>
-      </pre>
+              </code></pre>
+            </article>
 
-          <span>
-            <h3>Fibonacci Series:</h3>
-          </span>
-
-          <pre>
-        <code>
+            <article class="program-section" data-keywords="fibonacci sequence">
+              <h3>Fibonacci Series</h3>
+              <pre><code>
 #include &lt;iostream&gt;
 using namespace std;
 int main()
@@ -678,16 +676,24 @@ int main()
   }
   cout &lt;&lt; endl;
   return 0;
-}  
-        </code>
-      </pre>
+}
+              </code></pre>
+            </article>
+          </section>
 
-          <span>
-            <h3>Class-Object:</h3>
-          </span>
+          <section class="topic-group" aria-labelledby="group-classes">
+            <div class="topic-group-header">
+              <p class="topic-group-label">Class Basics</p>
+              <h2 id="group-classes">Classes and Constructors</h2>
+              <p class="topic-group-description">
+                Introductory object-oriented examples showing objects and common
+                constructor patterns.
+              </p>
+            </div>
 
-          <pre>
-        <code>
+            <article class="program-section" data-keywords="class object class-object">
+              <h3>Class-Object</h3>
+              <pre><code>
 #include &lt;iostream&gt;
 using namespace std;
 class A // class declaration
@@ -701,26 +707,23 @@ class A // class declaration
   void display()// member function declaration
   {
     cout &lt;&lt; "Value of a: " &lt;&lt; a &lt;&lt; endl;
-  }  
+  }
 };
 int main()
-{ 
+{
   A obj;// object creation
   obj.setdata(10);// member function call
   obj.display();// member function call
   return 0;
-}       
-        </code>
-      </pre>
+}
+              </code></pre>
+            </article>
 
-          <span>
-            <h3>Default Constructor:</h3>
-          </span>
-
-          <pre>
-        <code>
+            <article class="program-section" data-keywords="default constructor">
+              <h3>Default Constructor</h3>
+              <pre><code>
 #include &lt;iostream&gt;
-using namespace std;    
+using namespace std;
 class A// class declaration
 {
   int a;// instance variable
@@ -739,16 +742,13 @@ int main()
   A obj;// object creation
   obj.display();// member function call
   return 0;
-}     
-        </code>
-      </pre>
+}
+              </code></pre>
+            </article>
 
-          <span>
-            <h3>Parameterized Constructor:</h3>
-          </span>
-
-          <pre>
-        <code>
+            <article class="program-section" data-keywords="parameterized constructor">
+              <h3>Parameterized Constructor</h3>
+              <pre><code>
 #include &lt;iostream&gt;
 using namespace std;
 class A// class declaration
@@ -762,34 +762,31 @@ class A// class declaration
   void display()// member function declaration
   {
     cout &lt;&lt; "Value of a: " &lt;&lt; a &lt;&lt; endl;
-  } 
+  }
 };
 int main()
 {
   A obj(10);// object creation with parameter
   obj.display();// member function call
   return 0;
-}           
-        </code>
-      </pre>
+}
+              </code></pre>
+            </article>
 
-          <span>
-            <h3>Copy Constructor:</h3>
-          </span>
-
-          <pre>
-        <code>
+            <article class="program-section" data-keywords="copy constructor">
+              <h3>Copy Constructor</h3>
+              <pre><code>
 #include &lt;iostream&gt;
 using namespace std;
 class A// class declaration
 {
   int a;// instance variable
   public: // access specifier
-  A(int x)// parameterized constructor declaration  
+  A(int x)// parameterized constructor declaration
   {
     a = x;// parameterized constructor definition
   }
-  A(A &obj)// copy constructor declaration
+  A(A &amp;obj)// copy constructor declaration
   {
     a = obj.a;// copy constructor definition
   }
@@ -806,15 +803,23 @@ int main()
   obj2.display();// member function call
   return 0;
 }
-        </code> 
-      </pre>
+              </code></pre>
+            </article>
+          </section>
 
-          <span>
-            <h3>pure virtual function:</h3>
-          </span>
+          <section class="topic-group" aria-labelledby="group-inheritance">
+            <div class="topic-group-header">
+              <p class="topic-group-label">Inheritance and Polymorphism</p>
+              <h2 id="group-inheritance">Relationships Between Classes</h2>
+              <p class="topic-group-description">
+                Examples covering abstraction and the most common inheritance
+                patterns in C++.
+              </p>
+            </div>
 
-          <pre>
-        <code>
+            <article class="program-section" data-keywords="pure virtual function abstract">
+              <h3>Pure Virtual Function</h3>
+              <pre><code>
 #include &lt;iostream&gt;
 using namespace std;
 class Base
@@ -827,7 +832,7 @@ class Derived : public Base
   public:
   void show()
   {
-    cout &lt;&lt; "Derived class show function called" &lt;&lt; endl; 
+    cout &lt;&lt; "Derived class show function called" &lt;&lt; endl;
   }
 };
 int main()
@@ -836,15 +841,12 @@ int main()
   d.show();
   return 0;
 }
-        </code>
-      </pre>
+              </code></pre>
+            </article>
 
-          <span>
-            <h3>inheritance(single inheritance):</h3>
-          </span>
-
-          <pre>
-        <code>
+            <article class="program-section" data-keywords="single inheritance">
+              <h3>Inheritance (Single Inheritance)</h3>
+              <pre><code>
 #include &lt;iostream&gt;
 using namespace std;
 class base
@@ -870,50 +872,12 @@ int main()
   obj.show();
   return 0;
 }
-        </code>
-      </pre>
+              </code></pre>
+            </article>
 
-          <span>
-            <h3>Multilevel inheritance:</h3>
-          </span>
-
-          <pre>
-        <code>
-#include &lt;iostream&gt;
-using namespace std;
-class A
-{
-  public:
-  void displayA()
-  {
-    cout &lt;&lt; "Class A method called" &lt;&lt; endl;  
-  }
-};
-class B : public A
-{
-  public:
-  void displayB()
-  {
-    cout &lt;&lt; "Class B method called" &lt;&lt; endl;
-  } 
-};
-class C : public B
-{
-  public:
-  void displayC()
-  {
-    cout &lt;&lt; "Class C method called" &lt;&lt; endl;
-  }
-};     
-        </code>
-      </pre>
-
-          <span>
-            <h3>hierarchical Inheritance:</h3>
-          </span>
-
-          <pre>
-        <code>
+            <article class="program-section" data-keywords="multilevel inheritance">
+              <h3>Multilevel Inheritance</h3>
+              <pre><code>
 #include &lt;iostream&gt;
 using namespace std;
 class A
@@ -931,7 +895,39 @@ class B : public A
   {
     cout &lt;&lt; "Class B method called" &lt;&lt; endl;
   }
-};  
+};
+class C : public B
+{
+  public:
+  void displayC()
+  {
+    cout &lt;&lt; "Class C method called" &lt;&lt; endl;
+  }
+};
+              </code></pre>
+            </article>
+
+            <article class="program-section" data-keywords="hierarchical inheritance">
+              <h3>Hierarchical Inheritance</h3>
+              <pre><code>
+#include &lt;iostream&gt;
+using namespace std;
+class A
+{
+  public:
+  void displayA()
+  {
+    cout &lt;&lt; "Class A method called" &lt;&lt; endl;
+  }
+};
+class B : public A
+{
+  public:
+  void displayB()
+  {
+    cout &lt;&lt; "Class B method called" &lt;&lt; endl;
+  }
+};
 class C : public A
 {
   public:
@@ -940,15 +936,12 @@ class C : public A
     cout &lt;&lt; "Class C method called" &lt;&lt; endl;
   }
 };
-        </code>
-      </pre>
+              </code></pre>
+            </article>
 
-          <span>
-            <h3>multiple inheritance:</h3>
-          </span>
-
-          <pre>
-        <code>
+            <article class="program-section" data-keywords="multiple inheritance">
+              <h3>Multiple Inheritance</h3>
+              <pre><code>
 #include &lt;iostream&gt;
 using namespace std;
 class A
@@ -968,7 +961,7 @@ class B
   }
 };
 class C : public A, public B
-{ 
+{
   public:
   void displayC()
   {
@@ -982,16 +975,13 @@ int main()
   obj.displayB();
   obj.displayC();
   return 0;
-} 
-        </code>
-      </pre>
+}
+              </code></pre>
+            </article>
 
-          <span>
-            <h3>Hybrid Inheritance:</h3>
-          </span>
-
-          <pre>
-        <code>
+            <article class="program-section" data-keywords="hybrid inheritance">
+              <h3>Hybrid Inheritance</h3>
+              <pre><code>
 #include &lt;iostream&gt;
 using namespace std;
 class A
@@ -1035,22 +1025,30 @@ int main()
   obj.showD();
   return 0;
 }
-        </code>
-      </pre>
+              </code></pre>
+            </article>
+          </section>
 
-          <span>
-            <h3>operator overloading arithmetic:</h3>
-          </span>
+          <section class="topic-group" aria-labelledby="group-advanced">
+            <div class="topic-group-header">
+              <p class="topic-group-label">Advanced OOP</p>
+              <h2 id="group-advanced">Operators, Friends, and Static Members</h2>
+              <p class="topic-group-description">
+                Operator overloading examples plus friend functions and static
+                members.
+              </p>
+            </div>
 
-          <pre>
-        <code>
-#include &lt;iostream&gt;  
+            <article class="program-section" data-keywords="operator overloading arithmetic">
+              <h3>Operator Overloading Arithmetic</h3>
+              <pre><code>
+#include &lt;iostream&gt;
 using namespace std;
-class A 
+class A
 {
   int a,b;
   public:
-  void set(int x, int y) 
+  void set(int x, int y)
   {
     a = x;
     b = y;
@@ -1076,18 +1074,15 @@ int main()
   obj3.display();
   return 0;
 }
-        </code>
-      </pre>
+              </code></pre>
+            </article>
 
-          <span>
-            <h3>operator overloading unary:</h3>
-          </span>
-
-          <pre>
-        <code>
+            <article class="program-section" data-keywords="operator overloading unary">
+              <h3>Operator Overloading Unary</h3>
+              <pre><code>
 #include &lt;iostream&gt;
 using namespace std;
-class A 
+class A
 {
   int a,b;
   public:
@@ -1113,7 +1108,7 @@ class A
     temp.a=a++;
     temp.b=b++;
     return temp;
-  }            
+  }
 };
 int main()
 {
@@ -1121,29 +1116,26 @@ int main()
   obj1.set(5,10);
   cout &lt;&lt; "Original Data: ";
   obj1.display();
-  
+
   obj2=++obj1;
   cout &lt;&lt; "After Pre-increment: ";
   obj2.display();
-  
+
   obj3=obj1++;
   cout &lt;&lt; "After Post-increment: ";
   obj3.display();
-  
+
   cout &lt;&lt; "Final Data in obj1: ";
   obj1.display();
   return 0;
 }
-        </code>
-      </pre>
+              </code></pre>
+            </article>
 
-          <span>
-            <h3>operator overloading Binary:</h3>
-          </span>
-
-          <pre>
-        <code>
-#include &lt;iostream&gt;  
+            <article class="program-section" data-keywords="operator overloading binary">
+              <h3>Operator Overloading Binary</h3>
+              <pre><code>
+#include &lt;iostream&gt;
 using namespace std;
 class A
 {
@@ -1174,15 +1166,12 @@ int main()
   obj2.display();
   return 0;
 }
-        </code>
-      </pre>
+              </code></pre>
+            </article>
 
-          <span>
-            <h3>Friend Function:</h3>
-          </span>
-
-          <pre>
-        <code>
+            <article class="program-section" data-keywords="friend function">
+              <h3>Friend Function</h3>
+              <pre><code>
 #include &lt;iostream&gt;
 using namespace std;
 class A
@@ -1208,16 +1197,13 @@ int main()
   obj.set(10,20);
   function(obj);//friend function call
   return 0;
-}          
-        </code>
-      </pre>
+}
+              </code></pre>
+            </article>
 
-          <span>
-            <h3>Static data member:</h3>
-          </span>
-
-          <pre>
-        <code>
+            <article class="program-section" data-keywords="static data member">
+              <h3>Static Data Member</h3>
+              <pre><code>
 #include &lt;iostream&gt;
 using namespace std;
 class A
@@ -1240,15 +1226,12 @@ int main()
   cout &lt;&lt; "Static count: " &lt;&lt; A::count &lt;&lt; endl;
   return 0;
 }
-        </code>
-      </pre>
+              </code></pre>
+            </article>
 
-          <span>
-            <h3>Static Member Function:</h3>
-          </span>
-
-          <pre>
-        <code>
+            <article class="program-section" data-keywords="static member function">
+              <h3>Static Member Function</h3>
+              <pre><code>
 #include &lt;iostream&gt;
 using namespace std;
 class bca
@@ -1272,16 +1255,12 @@ int main()
   bca2::soc();
   return 0;
 }
-        </code>
-      </pre>
+              </code></pre>
+            </article>
 
-      <span>
-        <h3>Array of Object:</h3>
-      </span>
-
-      <pre>
-        <code>
-        <h3></h3></h2>
+            <article class="program-section" data-keywords="array of object objects">
+              <h3>Array of Object</h3>
+              <pre><code>
 #include &lt;iostream&gt;
 using namespace std;
 class BCA
@@ -1291,7 +1270,7 @@ class BCA
 public:
   void set()
   {
-    cin >> rollno;
+    cin &gt;&gt; rollno;
   }
   void show()
   {
@@ -1303,27 +1282,24 @@ int main()
   BCA students[20];
   int i, n;
   cout &lt;&lt; "Enter the total no of students\n";
-  cin >> n;
+  cin &gt;&gt; n;
   cout &lt;&lt; "Enter " &lt;&lt; n &lt;&lt; " roll no\n";
-  for (i = 0; i < n; i++)
+  for (i = 0; i &lt; n; i++)
   {
     students[i].set();
   }
-  for (i = 0; i < n; i++)
+  for (i = 0; i &lt; n; i++)
   {
     students[i].show();
   }
   return 0;
 }
-        </code>
-      </pre>
+              </code></pre>
+            </article>
 
-      <span>
-        <h3>Simple Calculator</h3>
-      </span>
-
-      <pre>
-        <code>
+            <article class="program-section" data-keywords="simple calculator">
+              <h3>Simple Calculator</h3>
+              <pre><code>
 #include &lt;iostream&gt;
 using namespace std;
 class calulator //class declaration
@@ -1352,7 +1328,7 @@ public: //access specifier
     cout &lt;&lt; c&lt;&lt;endl;
   }
     void div()
-  { 
+  {
     if(b==0)//checking for division by zero
     {
       cout&lt;&lt;"division by zero is not possible\n";
@@ -1376,13 +1352,13 @@ int main()
 {
   float m, n;
   cout &lt;&lt; "enter value of \n A:\n B:\n";
-  cin >> m >> n;
+  cin &gt;&gt; m &gt;&gt; n;
   calulator obj;
   obj.set(m, n);
 
   char operation;//variable to store user input for operation
   cout &lt;&lt; "enter opertaion you want to perform\n";
-  cin >> operation;
+  cin &gt;&gt; operation;
   switch (operation)//switch case to perform the desired operation
   {
   case '+':
@@ -1392,27 +1368,28 @@ int main()
   case '-':
     obj.sub();
     break;
-  
+
   case '*':
     obj.pro();
     break;
 
   case '/':
     obj.div();
-    break; 
-  
+    break;
+
   case '%':
     obj.mod();
     break;
-    
+
   default:
     cout &lt;&lt; "\nInvalid operation\n";
     break;
   }
   return 0;
-}          
-        </code>
-      </pre>
+}
+              </code></pre>
+            </article>
+          </section>
         </main>
       </div>
       <!-- End content-container -->
